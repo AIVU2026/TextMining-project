@@ -1,4 +1,4 @@
-# Sentiment Analysis Project
+# Text Mining Project
 
 ### Table of Contents
 
