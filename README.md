@@ -1,9 +1,5 @@
 # Sentiment Analysis Project
 
-### Badges (Optional)
-
-*You can add badges here for CI/CD, code quality, etc. once your project is set up on platforms like GitHub Actions, Travis CI, or Codecov.*
-
 ### Table of Contents
 
 * [About the Project](#about-the-project)
@@ -20,19 +16,27 @@
 
 ---
 
+
 ### About The Project
 
-This project focuses on **sentiment analysis**, a natural language processing (NLP) task aimed at determining the emotional tone behind a piece of text. It demonstrates the process of analyzing textual data to classify opinions expressed in a document as positive, negative, or neutral. The project includes data preprocessing, feature extraction, and the application of machine learning models, notably Support Vector Machines (SVM), for sentiment classification.
+This project explores fundamental Natural Language Processing (NLP) tasks: **Sentiment Analysis**, **Named Entity Recognition and Classification (NERC)**, and **Topic Classification**. It provides practical examples and implementations of various NLP techniques, from data preprocessing and feature extraction to the application of machine learning and deep learning models.
 
-The goal is to provide a clear and runnable example of how to build a sentiment analysis classifier, which can be extended or adapted for various applications such as social media monitoring, customer feedback analysis, or brand reputation management.
+The goal is to demonstrate how to:
+* Analyze textual data to classify opinions (positive, negative, neutral).
+* Identify and categorize named entities (e.g., persons, organizations, locations) within text.
+* Assign thematic categories or topics to documents.
+
+The project includes runnable Jupyter Notebooks that guide through each task, showcasing different approaches and model implementations, including Support Vector Machines (SVM) for sentiment and a spaCy-based baseline for NERC, along with a separate notebook for Topic Classification.
 
 #### Built With
 
 * Python
 * Jupyter Notebook
 * Pandas (for data manipulation)
-* Scikit-learn (for machine learning models, including SVM, and evaluation metrics)
+* Scikit-learn (for machine learning models like SVM and evaluation metrics)
 * NLTK (Natural Language Toolkit for text preprocessing)
+* spaCy (for efficient NLP, particularly for NERC)
+* Hugging Face Transformers (potentially for more advanced NERC or Topic Classification, as indicated in `NERC CODE.ipynb` snippet)
 
 ### Getting Started
 
@@ -49,8 +53,8 @@ Ensure you have Python 3.x installed on your system. You'll also need `pip` for 
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your_username/your_sentiment_project.git](https://github.com/your_username/your_sentiment_project.git)
-    cd your_sentiment_project
+    git clone [https://github.com/your_username/your_nlp_project.git](https://github.com/your_username/your_nlp_project.git)
+    cd your_nlp_project
     ```
 2.  **Create a virtual environment (recommended):**
     ```bash
@@ -64,7 +68,7 @@ Ensure you have Python 3.x installed on your system. You'll also need `pip` for 
     ```
     *Otherwise, install manually:*
     ```bash
-    pip install pandas scikit-learn numpy jupyter nltk
+    pip install pandas scikit-learn numpy jupyter nltk spacy transformers torch
     ```
 4.  **Download NLTK data:**
     Open a Python interpreter or a Jupyter Notebook cell and run:
@@ -72,8 +76,13 @@ Ensure you have Python 3.x installed on your system. You'll also need `pip` for 
     import nltk
     nltk.download('punkt')
     nltk.download('stopwords')
+    # You might need other NLTK datasets as specified in the notebooks
     ```
-    *(You might need other NLTK datasets depending on the specific preprocessing steps in the notebooks.)*
+5.  **Download spaCy models:**
+    For the NERC part, you'll need a spaCy model:
+    ```bash
+    python -m spacy download en_core_web_sm
+    ```
 
 ### Usage
 
@@ -84,10 +93,12 @@ The core of this project is demonstrated within the Jupyter Notebooks.
     jupyter notebook
     ```
 2.  **Open the notebooks:**
-    * `SentimentCodeHasan.ipynb`: This notebook likely contains the main sentiment analysis workflow, including data loading, preprocessing, model training, and evaluation.
-    * `Setimental analysis-SVM.ipynb`: This notebook specifically focuses on implementing and evaluating a Support Vector Machine (SVM) model for sentiment classification.
+    * `SentimentCodeHasan.ipynb`: Contains the main sentiment analysis workflow, covering data loading, preprocessing, model training, and evaluation.
+    * `Setimental analysis-SVM.ipynb`: Specifically focuses on implementing and evaluating a Support Vector Machine (SVM) model for sentiment classification.
+    * `NERC CODE.ipynb`: Demonstrates Named Entity Recognition and Classification, possibly using a spaCy baseline and suggesting a Hugging Face model for comparison.
+    * `Topic_Classification_for_Report.ipynb`: Implements and evaluates a Topic Classification model.
 
-Follow the instructions and code cells within the notebooks to run the sentiment analysis experiments. You can modify the code to experiment with different models, features, or datasets.
+Follow the instructions and code cells within the notebooks to run the analyses and experiments for each NLP task. You can modify the code to experiment with different models, features, or datasets.
 
 ### Datasets
 
@@ -118,7 +129,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 **Vrije University**\
 Hyunwoo Song - h.song@student.vu.nl
-Hassan 
+Hassan - ..
+D.G.J.K. Linger - ..
+F. Moser - ..
 
 Project Link: [https://github.com/AIVU2026/TextMining-project]
 
@@ -126,4 +139,6 @@ Project Link: [https://github.com/AIVU2026/TextMining-project]
 
 * Scikit-learn documentation
 * NLTK library
+* spaCy documentation
+* Hugging Face Transformers library
 * Jupyter Project
