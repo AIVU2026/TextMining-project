@@ -62,11 +62,6 @@ Ensure you have Python 3.x installed on your system. You'll also need `pip` for 
     source venv/bin/activate  # On Windows: `venv\Scripts\activate`
     ```
 3.  **Install the required Python packages:**
-    *If you have a `requirements.txt` file, use:*
-    ```bash
-    pip install -r requirements.txt
-    ```
-    *Otherwise, install manually:*
     ```bash
     pip install pandas scikit-learn numpy jupyter nltk spacy transformers torch
     ```
@@ -76,8 +71,7 @@ Ensure you have Python 3.x installed on your system. You'll also need `pip` for 
     import nltk
     nltk.download('punkt')
     nltk.download('stopwords')
-    # You might need other NLTK datasets as specified in the notebooks
-    ```
+
 5.  **Download spaCy models:**
     For the NERC part, you'll need a spaCy model:
     ```bash
@@ -104,10 +98,20 @@ Follow the instructions and code cells within the notebooks to run the analyses 
 
 The project utilizes the following datasets (included in the repository):
 
+#### Sentiment Analysis
  The dataset(`sentiment_data.csv`) used in this study is the "Financial Sentiment Analysis" dataset, containing over 5,800 entries. 
  Each entry consists of two features: text expressing opinions related to financial topics and the corresponding sentiment label (positive, negative, or neutral). 
  The training data is highly imbalanced: neutral ~53%, positive ~31%, and negative ~14%. 
  The test dataset contains 18 text samples labeled with the same three sentiment classes, where all classes are evenly balanced.
+
+#### Topic Classification
+The dataset used for topic classification was synthesized from three existing datasets sourced from various websites, and one data-scraped dataset sourced from Reddit. First, the “”movie” data was sourced from an IMDB movie review dataset which was initially used for sentiment analysis. The set consists of a list of ~49000 text values with a sentiment label attached to it. Secondly the “book” data was sourced from an amazon book reviews dataset used initially for sentiment analysis as well. The set consisted of ~4000 unique values each paired to a sentiment label. Thirdly the first “sports” dataset was used from the 20-newsgroup dataset used as a benchmarking set in sci-kit learn, which is a collection of approximately 20,000 newsgroup documents, partitioned across 20 different newsgroups. The particular section of the dataset that was used was from categories rec.sport.hockey and rec.sport.baseball. This data was directly available in a dataframe and consisted of ~1200 documents. 
+
+The second sports dataset was scraped from Reddit and carefully curated to align with the content of the test set. Since the test set included references to specific sports tropes and keywords, these were deliberately targeted during data collection to ensure topical similarity. The training data was then compiled into a unified set by combining content from each dataset and assigning topic labels accordingly. As a result, the training sets for the movie and book categories remained the same, while two distinct datasets were used for the sports category, each getting a separate training run.
+
+#### NERC
+To be able to perform a robust Named Entity Recognition and Classification (NERC) we looked at the tags that are present in the test set and these tags included: “B-PERSON”, “I-PERSON“, “B-ORG“, “I-ORG”, ”B-LOCATION”, “I-LOCATION“, “B-WORK_OF_ART“, and “I-WORK_OF_ART“. For our training dataset we selected the CoNLL-2003 NER training dataset from hugging Face[17], as the source for the supervised learning. This dataset has over 200000 tokens and has a large amount of entity types that are not relevant to our dataset and the target evaluations that we want. Thus we filtered the dataset to only hold the sentences that contained the entity tags that are relevant to make sure that we avoid noise in the dataset and that the domain is aligned with out model and the test set. 
+
 
 ### Contributing
 
@@ -131,7 +135,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * Hyunwoo Song - h.song@student.vu.nl
 * Hassan - ..
 * D.G.J.K. Linger - ..
-* F. Moser - ..
+* F. Moser - f.a.moser@student.vu.nl
 
 Project Link: [https://github.com/AIVU2026/TextMining-project]
 
