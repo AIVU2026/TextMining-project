@@ -127,11 +127,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ### Contact
 
-**Vrije University**\
-Hyunwoo Song - h.song@student.vu.nl
-Hassan - ..
-D.G.J.K. Linger - ..
-F. Moser - ..
+**Vrije University**
+* Hyunwoo Song - h.song@student.vu.nl
+* Hassan - ..
+* D.G.J.K. Linger - ..
+* F. Moser - ..
 
 Project Link: [https://github.com/AIVU2026/TextMining-project]
 
