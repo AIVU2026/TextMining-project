@@ -132,7 +132,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ### Contact
 
 **Vrije University**
-* Hyunwoo Song - h.song@student.vu.nl
+* H.Song - h.song@student.vu.nl
 * Hassan - ..
 * D.G.J.K. Linger - d.g.j.k.linger@student.vu.nl
 * F. Moser - f.a.moser@student.vu.nl
