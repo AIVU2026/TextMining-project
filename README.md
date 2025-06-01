@@ -134,7 +134,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 **Vrije University**
 * Hyunwoo Song - h.song@student.vu.nl
 * Hassan - ..
-* D.G.J.K. Linger - ..
+* D.G.J.K. Linger - d.g.j.k.linger@student.vu.nl
 * F. Moser - f.a.moser@student.vu.nl
 
 Project Link: [https://github.com/AIVU2026/TextMining-project]
