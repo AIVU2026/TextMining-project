@@ -87,7 +87,7 @@ The core of this project is demonstrated within the Jupyter Notebooks.
     jupyter notebook
     ```
 2.  **Open the notebooks:**
-    * `SentimentCodeHasan.ipynb`: Contains the main sentiment analysis workflow, covering data loading, preprocessing, model training, and evaluation.
+    * `Sentiment Analysis - RoBERTa.ipynb`: Contains the main sentiment analysis workflow, covering data loading, preprocessing, model training, and evaluation.
     * `Setimental analysis-SVM.ipynb`: Specifically focuses on implementing and evaluating a Support Vector Machine (SVM) model for sentiment classification.
     * `NERC CODE.ipynb`: Demonstrates Named Entity Recognition and Classification, possibly using a spaCy baseline and suggesting a Hugging Face model for comparison.
     * `Topic_Classification_for_Report.ipynb`: Implements and evaluates a Topic Classification model.
